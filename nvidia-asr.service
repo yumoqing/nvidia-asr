@@ -1,0 +1,15 @@
+[Unit]
+Wants=systemd-networkd.service
+
+[Service]
+User=ymq
+Group=ymq
+Type=forking
+WorkingDirectory=/share/ymq/run/nvidia-asr
+ExecStart=/share/ymq/run/nvidia-asr/start.sh
+ExecStop=/share/ymq/run/nvidia-asr/stop.sh
+StandardOutput=append:/var/log/asr/asr.log
+StandardError=append:/var/log/asr/asr.log
+SyslogIdentifier=asr
+[Install]
+WantedBy=multi-user.target

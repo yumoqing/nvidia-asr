@@ -1,0 +1,4 @@
+wheel
+typing_extensions
+numpy
+nemo-toolkit[asr]

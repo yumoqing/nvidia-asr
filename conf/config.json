@@ -1,0 +1,50 @@
+{
+	"device" : "cuda",
+	"asr_models":{
+		"cn": "/share/models/nvidia/stt_zh_citrinet_1024_gamma_0_25/stt_zh_citrinet_1024_gamma_0_25.nemo",
+		"en": "/share/models/nvidia/stt_en_conformer_ctc_large/stt_en_conformer_ctc_large.nemo"
+	},
+    "logger":{
+        "name":"asr",
+        "levelname":"info",
+        "logfile":"$[workdir]$/logs/asr.log"
+    },
+    "filesroot":"$[workdir]$/files",
+    "website":{
+        "paths":[
+            ["$[workdir]$/wwwroot",""]
+        ],
+        "client_max_size":10000,
+        "host":"0.0.0.0",
+        "port":9992,
+        "coding":"utf-8",
+        "indexes":[
+            "index.html",
+            "index.tmpl",
+            "index.ui",
+            "index.dspy",
+            "index.md"
+        ],
+        "startswiths":[
+            {
+                "leading":"/idfile",
+                "registerfunction":"idfile"
+            }
+        ],
+        "processors":[
+            [".dspy","dspy"],
+            [".md","md"]
+        ],
+        "session_max_time":3000,
+        "session_issue_time":2500,
+        "session_redis_notuse":{
+            "url":"redis://127.0.0.1:6379"
+        }
+    },
+    "langMapping":{
+        "zh-Hans-CN":"zh-cn",
+        "zh-CN":"zh-cn",
+        "en-us":"en",
+        "en-US":"en"
+    }
+}
