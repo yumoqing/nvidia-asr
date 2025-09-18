@@ -33,6 +33,7 @@
         ],
         "processors":[
             [".dspy","dspy"],
+            [".ui","bui"],
             [".md","md"]
         ],
         "session_max_time":3000,

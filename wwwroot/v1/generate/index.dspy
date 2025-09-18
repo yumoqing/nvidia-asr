@@ -1,0 +1,2 @@
+debug(f'{params_kw=}')
+return await generate(params_kw.aduio_file)

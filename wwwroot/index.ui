@@ -1,0 +1,7 @@
+{
+    "widgettype":"MdWidget",
+    "options":{
+        "md_url":"{{entire_url('index.md')}}",
+        "width":"100%"
+    }
+}
